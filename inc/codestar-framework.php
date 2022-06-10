@@ -2,7 +2,6 @@
 // Control core classes for avoid errors
 if( class_exists( 'CSF' ) ) {
 
-    //
     // Set a unique slug-like ID
     $prefix = '_postkasse_options';
     /************************************************************************/
@@ -11,127 +10,8 @@ if( class_exists( 'CSF' ) ) {
     CSF::createOptions( $prefix, array(
         'menu_title' => 'Postkasse',
         'menu_slug'  => 'postkasse_options',
-      ) );
-
-
-      CSF::createSection( $prefix, array(
-        'title'  => 'Overview',
-        'icon'   => 'fas fa-rocket',
-        'fields' => array(
-      
-          //
-          // A text field
-          //
-          array(
-            'id'    => 'opt-text',
-            'type'  => 'text',
-            'title' => 'Text',
-          ),
-      
-          array(
-            'id'    => 'opt-textarea',
-            'type'  => 'textarea',
-            'title' => 'Textarea',
-            'help'  => 'The help text of the field.',
-          ),
-      
-          array(
-            'id'    => 'opt-upload',
-            'type'  => 'upload',
-            'title' => 'Upload',
-          ),
-      
-          array(
-            'id'    => 'opt-switcher',
-            'type'  => 'switcher',
-            'title' => 'Switcher',
-            'label' => 'The label text of the switcher.',
-          ),
-      
-          array(
-            'id'      => 'opt-color',
-            'type'    => 'color',
-            'title'   => 'Color',
-            'default' => '#3498db',
-          ),
-      
-          array(
-            'id'    => 'opt-checkbox',
-            'type'  => 'checkbox',
-            'title' => 'Checkbox',
-            'label' => 'The label text of the checkbox.',
-          ),
-      
-          array(
-            'id'      => 'opt-radio',
-            'type'    => 'radio',
-            'title'   => 'Radio',
-            'options' => array(
-              'yes'   => 'Yes, Please.',
-              'no'    => 'No, Thank you.',
-            ),
-            'default' => 'yes',
-          ),
-      
-          array(
-            'id'          => 'opt-select',
-            'type'        => 'select',
-            'title'       => 'Select',
-            'placeholder' => 'Select an option',
-            'options'     => array(
-              'opt-1'     => 'Option 1',
-              'opt-2'     => 'Option 2',
-              'opt-3'     => 'Option 3',
-            ),
-          ),
-      
-          array(
-            'id'      => 'opt-image-select',
-            'type'    => 'image_select',
-            'title'   => 'Image Select',
-            'options' => array(
-              'opt-1' => 'http://codestarframework.com/assets/images/placeholder/100x80-2ecc71.gif',
-              'opt-2' => 'http://codestarframework.com/assets/images/placeholder/100x80-e74c3c.gif',
-              'opt-3' => 'http://codestarframework.com/assets/images/placeholder/100x80-ffbc00.gif',
-              'opt-4' => 'http://codestarframework.com/assets/images/placeholder/100x80-3498db.gif',
-              'opt-5' => 'http://codestarframework.com/assets/images/placeholder/100x80-555555.gif',
-            ),
-            'default' => 'opt-1',
-          ),
-      
-          array(
-            'id'    => 'opt-background',
-            'type'  => 'background',
-            'title' => 'Background',
-          ),
-      
-          array(
-            'type'    => 'notice',
-            'style'   => 'success',
-            'content' => 'A <strong>notice</strong> field with <strong>success</strong> style.',
-          ),
-      
-          array(
-            'id'    => 'opt-icon',
-            'type'  => 'icon',
-            'title' => 'Icon',
-          ),
-      
-          array(
-            'id'    => 'opt-alt-text',
-            'type'  => 'text',
-            'title' => 'Text',
-          ),
-      
-          array(
-            'id'         => 'opt-alt-textarea',
-            'type'       => 'textarea',
-            'title'      => 'Textarea',
-            'subtitle'   => 'A textarea with shortcoder.',
-            'shortcoder' => 'csf_demo_shortcodes',
-          ),
-      
-        )
+        'framework_title'         => '<img src="'.get_template_directory_uri(). '/assets/images/postkasse-white.png" style="width:200px;"><small> by combrokers team</small>',
+        'framework_class'         => '',
       ) );
   
     /************************************************************************/
@@ -186,20 +66,20 @@ if( class_exists( 'CSF' ) ) {
                     'type'     => 'text',
                     'title'    => 'Enter Button Text',
                     'subtitle' => 'This text field is required, cannot be pass empty.',
-                    'default'  => 'Contact',
+                    'default'  => __('Contact', 'postkasse'),
                     'validate' => 'csf_validate_required',
                     'attributes' => array(
                         'style'    => 'width: 100%;'
                     ),
                 ),
 
-                array(
-                    'id'       => 'header_left_btn_icon',
-                    'type'     => 'icon',
-                    'title'    => 'Select Icon',
-                    'default' => 'fas fa-phone',
-                    'compiler'  => 'false',
-                ),
+                // array(
+                //     'id'       => 'header_left_btn_icon',
+                //     'type'     => 'icon',
+                //     'title'    => 'Select Icon',
+                //     'default' => 'fas fa-phone',
+                //     'compiler'  => 'false',
+                // ),
             )
         ) );
     
@@ -219,10 +99,173 @@ if( class_exists( 'CSF' ) ) {
                     'subtitle'  => __('Upload your logo', 'postkasse' ),
                     'default'   => array('url' => get_template_directory_uri(). '/assets/images/postkase.png'),
                 ),
+
+                array(
+                    'type'    => 'subheading',
+                    'content' => 'Footer Middle Info',
+                ),
+
+                array(
+                    'id'       => 'footer_heading_text',
+                    'type'     => 'text',
+                    'title'    => 'Enter Footer Heading',
+                    'default'  => __('Fronter Digital Agency', 'postkasse'),
+                    'attributes' => array('style'    => 'width: 100%;'),
+                ),
+
+                array(
+                    'id'       => 'footer_middle_description',
+                    'type'     => 'textarea',
+                    'title'    => 'Enter Footer Description',
+                    'default'  => __('Start working with Fronter that can provide everything you need to generate awareness, drive traffic, connect.', 'postkasse'),
+                    'attributes' => array('style' => 'width: 100%;'),
+                ),
+
             )
             ));
+
+        /************************************************************************/
+        // Theme basic Footer settings
+        /***************************************************************************/
+        CSF::createSection( $prefix, array(
+          'parent'      => 'basic_settings',
+          'title'       => 'Social Settings',
+          'description' => 'This field will manage your theme footer widgets settings',
+          'fields'      => array(
+      
+              array(
+                  'id'       => 'footer_social_text',
+                  'type'     => 'text',
+                  'title'    => 'Enter Footer Heading',
+                  'default'  => __('Follow us:', 'postkasse'),
+                  'attributes' => array('style'    => 'width: 100%;'),
+              ),
+
+              array(
+                'id'     => 'social_repeter',
+                'type'   => 'repeater',
+                'title'  => 'Add Footer Social Media',
+                'fields' => array(
+                  array(
+                    'id'    => 'social_status',
+                    'type'  => 'switcher',
+                    'title' => 'Enable Icon',
+                    'default' =>  false,
+                  ),
+                  array(
+                    'id'    => 'social_text_link',
+                    'type'  => 'textarea',
+                    'title' => 'Footer Social Icon',
+                    'default' =>  '#',
+                  ),
+                  
+                )
+
+              ),
+
+          )
+        ));
+
+        /************************************************************************/
+        // Theme basic Footer settings
+        /***************************************************************************/
+        CSF::createSection( $prefix, array(
+            'parent'      => 'basic_settings',
+            'title'       => 'Copyright Settings',
+            'description' => 'This field will manage your theme footer widgets settings',
+            'fields'      => array(
+        
+                array(
+                    'id'       => 'footer_copyright_text',
+                    'type'     => 'textarea',
+                    'title'    => 'Enter Footer Copyright Text',
+                    'default'  => __('<p class="mb-0">© <script>document.write(new Date().getFullYear())</script>2022 Postkasse. Design with <i class="mdi mdi-heart text-danger"></i> by <a href="https://combrokers.no/" target="_blank" class="text-reset">Combrokers</a>.</p>', 'postkasse'),
+                    'attributes' => array('style'    => 'width: 100%;'),
+                ),
+            )
+          )
+        );
     
-  
+
+    /************************************************************************/
+    // Theme frontend settings
+    /***************************************************************************/
+    CSF::createSection( $prefix, array(
+        'id'    => 'frontend_settings',
+        'title' => 'Front Page Settings',
+        'icon'  => 'fas fa-home',
+    ) );
+
+      /************************************************************************/
+      // Theme Frontendt settings
+      /***************************************************************************/
+
+      CSF::createSection( $prefix, array(
+        'parent'      => 'frontend_settings',
+        'title'       => 'Hero Section Settings',
+        'description' => 'This settings will maange your hompage all the contents. Explore the settngs and configure it as you want.',
+        'fields'      => array(
+    
+          array(
+            'id'       => 'hero_subheading',
+            'type'     => 'text',
+            'title'    => 'Enter subheading text',
+            'default'  => __('We are a very dedicated team', 'postkasse'),
+            'attributes' => array('style'    => 'width: 100%;'),
+          ),
+          array(
+            'id'       => 'hero_mainheading',
+            'type'     => 'text',
+            'title'    => 'Enter Heading text',
+            'default'  => __('We are a full-service in', 'postkasse'),
+            'attributes' => array('style'    => 'width: 100%;'),
+          ),
+          array(
+            'id'     => 'hero_text_animation_repeter',
+            'type'   => 'repeater',
+            'title'  => 'Add Animation Text',
+            'fields' => array(
+              array(
+                'id'    => 'hero_animation_text',
+                'type'  => 'text',
+                'title' => 'Animation Text',
+                'default' =>  'Teachnology',
+              ),
+              
+            )
+
+          ),
+          array(
+              'type'    => 'subheading',
+              'content' => 'Hero section description',
+          ),
+          array(
+            'id'       => 'hero_description',
+            'type'     => 'textarea',
+            'title'    => 'Enter Description',
+            'default'  => __('We collaborate with people, teams, and businesses to develop design systems, strategies, and processes to do a better creative work everyday.', 'postkasse'),
+            'attributes' => array('style'    => 'width: 100%;'),
+          ),
+          array(
+            'type'    => 'subheading',
+            'content' => 'Hero section Video Settings',
+          ),
+          array(
+            'id'       => 'hero_video_text',
+            'type'     => 'text',
+            'title'    => 'Video text',
+            'default'  => __('Watch Now', 'postkasse'),
+            'attributes' => array('style' => 'width: 100%;'),
+          ),
+          array(
+            'id'       => 'hero_video_link',
+            'type'     => 'text',
+            'title'    => 'Video Link',
+            'default'  => __('https://www.youtube.com/embed/Jfrjeg26Cwk', 'postkasse'),
+            'attributes' => array('style' => 'width: 100%;'),
+          ),
+        )
+      ));
   }
   
 

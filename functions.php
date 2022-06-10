@@ -158,18 +158,8 @@ function postkasse_scripts() {
 	
 	// Boostrap js
 	wp_enqueue_script( 'bootstrap-scripts', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), '1.0', true );
-	// Polyfiles js
-	wp_enqueue_script( 'polyfiles-scripts', get_template_directory_uri() . '/assets/js/gumshoe.polyfills.min.js', array(), '1.0', true );
 	// Contact js
 	wp_enqueue_script( 'contact-scripts', get_template_directory_uri() . '/assets/js/contact.js', array(), '1.0', true );
-	// Tiny Slider
-	wp_enqueue_script( 'tiny-slider-scripts', get_template_directory_uri() . '/assets/js/tiny-slider.js', array(), '1.0', true );
-	// Parallax js
-	wp_enqueue_script( 'parallax-scripts', get_template_directory_uri() . '/assets/js/parallax.js', array(), '1.0', true );
-	// Tobii js
-	wp_enqueue_script( 'tobiimin-scripts', get_template_directory_uri() . '/assets/js/tobii.min.js', array(), '1.0', true );
-	// shuffle.min.js
-	wp_enqueue_script( 'shufflemin-scripts', get_template_directory_uri() . '/assets/js/shuffle.min.js', array(), '1.0', true );
 	// feather min js
 	wp_enqueue_script( 'feathermin-scripts', get_template_directory_uri() . '/assets/js/feather.min.js', array(), '1.0', true );
 	// Custom js
