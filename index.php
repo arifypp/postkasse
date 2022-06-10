@@ -14,6 +14,15 @@ $postkasee__hero_right_image2    = $postkasse_options['hero-right-image2'];
 $postkasee__hiws_headings    = $postkasse_options['hiws_headings'];
 $postkasee__hiws_description    = $postkasse_options['hiws_description'];
 $postkasee__hiws_items    = $postkasse_options['hiws_items'];
+$postkasee__analyz_setings_heading    = $postkasse_options['analyz_setings_heading'];
+$postkasee__analyz_setings_subheading    = $postkasse_options['analyz_setings_subheading'];
+$postkasee__analyz_setings_description    = $postkasse_options['analyz_setings_description'];
+$postkasee__analyz_setings_buttontext    = $postkasse_options['analyz_setings_buttontext'];
+$postkasee__analyz_setings_image1    = $postkasse_options['analyz_setings_image1'];
+$postkasee__analyz_setings_image2    = $postkasse_options['analyz_setings_image2'];
+$postkasee__videos_settings_subtext    = $postkasse_options['videos_settings_subtext'];
+$postkasee__videos_settings_heading    = $postkasse_options['videos_settings_heading'];
+$postkasee__videos_settings_desc    = $postkasse_options['videos_settings_desc'];
 
 ?>
     <!-- Start Hero -->
@@ -134,19 +143,25 @@ $postkasee__hiws_items    = $postkasse_options['hiws_items'];
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 animtaed">
                     <div class="row g-3 align-items-center">
+
+                        <?php if(!empty($postkasee__analyz_setings_image1)) : ?>
                         <div class="col-lg-7 col-6">
-                            <img src="<?php echo esc_url( get_template_directory_uri(). '/assets/images/digital/03.jpg'); ?>" class="img-fluid rounded-md" alt="work-image">
+                            <img src="<?php echo esc_url($postkasee__analyz_setings_image1['url']); ?>" class="img-fluid rounded-md" alt="work-image">
                         </div><!--end col-->
-                        
+                        <?php endif; ?>
+
                         <div class="col-lg-5 col-6">
                             <div class="row g-3">
                                 <div class="col-lg-12 col-md-12">
                                     <img src="<?php echo esc_url( get_template_directory_uri(). '/assets/images/digital/04.jpg'); ?>" class="img-fluid rounded-md" alt="work-image">
                                 </div><!--end col-->
 
+                                <?php if(!empty($postkasee__analyz_setings_image2)) : ?>
                                 <div class="col-lg-12 col-md-12">
-                                    <img src="<?php echo esc_url( get_template_directory_uri(). '/assets/images/square/square-success.png'); ?>" class="avatar avatar-medium img-fluid rounded-md" alt="work-image">
+                                    <img src="<?php echo esc_url($postkasee__analyz_setings_image2['url']); ?>" class="avatar avatar-medium img-fluid rounded-md" alt="work-image">
                                 </div><!--end col-->
+                                <?php endif; ?>
+
                             </div><!--end row-->
                         </div><!--end col-->
                     </div><!--end row-->
@@ -154,13 +169,24 @@ $postkasee__hiws_items    = $postkasse_options['hiws_items'];
 
                 <div class="col-lg-5 offset-lg-1 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
                     <div class="section-title">
-                        <h6 class="text-primary fw-normal mb-2">Web and mobile development</h6>
-                        <h4 class="title mb-4">Analyze your entire market <br> pricing & stock availability</h4>
-                        <p class="text-muted para-desc mb-0">Start working with Fronter that can provide everything you need to generate awareness, drive traffic, connect.</p>
-                    
+                        <?php if(!empty($postkasee__analyz_setings_subheading)) : ?>
+                        <h6 class="text-primary fw-normal mb-2"><?php echo esc_html__($postkasee__analyz_setings_subheading, 'postkasse'); ?></h6>
+                        <?php endif; ?>
+
+                        <?php if(!empty($postkasee__analyz_setings_heading)) : ?>
+                        <h4 class="title mb-4"><?php echo esc_html__($postkasee__analyz_setings_heading, 'postkasse'); ?></h4>
+                        <?php endif; ?>
+
+                        <?php if(!empty($postkasee__analyz_setings_description)) : ?>
+                        <p class="text-muted para-desc mb-0"><?php echo esc_html__($postkasee__analyz_setings_description, 'postkasse')?></p>
+                        <?php endif; ?>
+
+                        <?php if(!empty($postkasee__analyz_setings_buttontext)) : ?>
                         <div class="mt-4">
-                            <a href="#!" data-bs-toggle="modal" data-bs-target="#contactform" class="btn btn-primary">Contact us</a>
+                            <a href="#!" data-bs-toggle="modal" data-bs-target="#contactform" class="btn btn-primary"><?php echo esc_html__($postkasee__analyz_setings_buttontext, 'postkasse')?></a>
                         </div>
+                        <?php endif; ?>
+
                     </div>
                 </div><!--end col-->
             </div><!--end row-->
@@ -174,11 +200,10 @@ $postkasee__hiws_items    = $postkasse_options['hiws_items'];
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
                     <div class="video-solution-cta position-relative z-index-1">
-                        <!-- <div class="bg-half-260 d-table w-100 rounded" data-jarallax='{"speed": 0.5}' style="background: url('images/digital/cta.jpg');"> -->
                         <div class="position-relative">
                             <img src="<?php echo esc_url( get_template_directory_uri(). '/assets/images/digital/cta.jpg' ); ?>" class="img-fluid rounded-md shadow-lg" alt="">
                             <div class="play-icon">
-                                <a href="#!" data-type="youtube" data-id="yba7hPeTSjk" class="play-btn lightbox">
+                                <a href="#!" data-bs-toggle="modal" data-bs-target="#video_modal" class="play-btn lightbox">
                                     <i class="mdi mdi-play text-primary rounded-circle bg-white shadow-lg"></i>
                                 </a>
                             </div>
@@ -189,15 +214,25 @@ $postkasee__hiws_items    = $postkasse_options['hiws_items'];
                                     <div class="row align-items-center">
                                         <div class="col-md-6 mt-4 pt-2">
                                             <div class="section-title text-md-start">
-                                                <h6 class="text-white-50 fw-normal">Fronter Agency</h6>
-                                                <h4 class="title text-white title-dark mb-0">We are a full-service <br> digital company</h4>
+                                            <?php if( !empty($postkasee__videos_settings_subtext)) : ?>
+                                                <h6 class="text-white-50 fw-normal"><?php echo esc_html__($postkasee__videos_settings_subtext, 'postkasse')?></h6>
+                                            <?php endif; ?>
+
+                                            <?php if( !empty($postkasee__videos_settings_heading)) : ?>
+                                                <h4 class="title text-white title-dark mb-0">
+                                                    <?php echo esc_html__($postkasee__videos_settings_heading, 'postkasse'); ?>
+                                                </h4>
+                                            <?php endif; ?>
                                             </div>
                                         </div><!--end col-->
 
                                         <div class="col-md-6 col-12 mt-4 pt-md-2">
                                             <div class="section-title text-md-start">
-                                                <p class="text-white-50 para-desc">Start working with Fronter that can provide everything you need to generate awareness, drive traffic, connect.</p>
-                                                <a href="javascript:void(0)" class="text-white title-dark">Read More <i class="uil uil-angle-right-b align-middle"></i></a>
+                                            <?php if( !empty($postkasee__videos_settings_heading)) : ?>
+                                                <p class="text-white-50 para-desc">
+                                                    <?php echo esc_html__($postkasee__videos_settings_desc, 'postkasse'); ?>
+                                                </p>
+                                            <?php endif; ?>
                                             </div>
                                         </div><!--end col-->
                                     </div><!--end row-->

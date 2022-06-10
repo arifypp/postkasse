@@ -338,6 +338,99 @@ if( class_exists( 'CSF' ) ) {
           ),
         )
       ));
+
+    /************************************************************************/
+    // Theme Analysz settings
+    /***************************************************************************/
+
+      CSF::createSection( $prefix, array(
+        'parent'      => 'frontend_settings',
+        'title'       => 'Analyzing Section Settings',
+        'description' => 'This settings will maange your hompage all the contents. Explore the settngs and configure it as you want.',
+        'fields'      => array(
+    
+          array(
+            'id'       => 'analyz_setings_subheading',
+            'type'     => 'text',
+            'title'    => 'Sub Heading Text',
+            'default'  => __('Web and mobile development', 'postkasse'),
+            'attributes' => array('style'    => 'width: 100%;'),
+          ),
+          array(
+            'id'       => 'analyz_setings_heading',
+            'type'     => 'text',
+            'title'    => 'Heading Text',
+            'default'  => __('Analyze your entire market pricing & stock availability', 'postkasse'),
+            'attributes' => array('style'    => 'width: 100%;'),
+          ),
+          array(
+            'id'       => 'analyz_setings_description',
+            'type'     => 'textarea',
+            'title'    => 'Description',
+            'default'  => __('Start working with Fronter that can provide everything you need to generate awareness, drive traffic, connect.', 'postkasse'),
+            'attributes' => array('style'    => 'width: 100%;'),
+          ),
+          array(
+            'id'       => 'analyz_setings_buttontext',
+            'type'     => 'text',
+            'title'    => 'Button Text',
+            'default'  => __('Kontakt Oss', 'postkasse'),
+            'attributes' => array('style'    => 'width: 100%;'),
+          ),
+          array(
+            'type'    => 'subheading',
+            'content' => 'Upload Images',
+          ),
+          array(
+            'id'    => 'analyz_setings_image1',
+            'type'  => 'media',
+            'title' => 'Large Large Image',
+            'subtitle'  => __('Upload your Image', 'postkasse' ),
+            'default'   => array('url' => get_template_directory_uri(). '/assets/images/digital/03.jpg'),
+          ),
+          array(
+            'id'    => 'analyz_setings_image2',
+            'type'  => 'media',
+            'title' => 'Small Large Image',
+            'subtitle'  => __('Upload your Image', 'postkasse' ),
+            'default'   => array('url' => get_template_directory_uri(). '/assets/images/digital/04.jpg'),
+          ),
+        )
+      ));
+
+      /************************************************************************/
+      // Video Frontend settings
+      /***************************************************************************/
+
+      CSF::createSection( $prefix, array(
+        'parent'      => 'frontend_settings',
+        'title'       => 'Video Settings',
+        'description' => 'This settings will maange your hompage all the contents. Explore the settngs and configure it as you want.',
+        'fields'      => array(    
+          array(
+            'id'       => 'videos_settings_subtext',
+            'type'     => 'text',
+            'title'    => 'Sub Heading',
+            'default'  => __('Fronter Agency', 'postkasse'),
+            'attributes' => array('style'    => 'width: 100%;'),
+          ),
+          array(
+            'id'       => 'videos_settings_heading',
+            'type'     => 'text',
+            'title'    => 'Main Heading',
+            'default'  => __('We are a full-service digital company', 'postkasse'),
+            'attributes' => array('style'  => 'width: 100%;'),
+          ),
+          array(
+            'id'       => 'videos_settings_desc',
+            'type'     => 'textarea',
+            'title'    => 'Video Description',
+            'default'  => __('Start working with Fronter that can provide everything you need to generate awareness, drive traffic, connect.', 'postkasse'),
+            'attributes' => array('style'    => 'width: 100%;'),
+          ),
+        )
+      ));
+
   }
   
 
