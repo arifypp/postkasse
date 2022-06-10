@@ -16,7 +16,6 @@ $postkasse_options = get_option( '_postkasse_options' );
 $postkasse_mainlogo = $postkasse_options['main-logo']['url'];
 $postkasse_favicon = $postkasse_options['main-favicon']['url'];
 $postkasse_contact_btn_text = $postkasse_options['header_left_btn_text'];
-$postkasse_contact_btn_icon = $postkasse_options['header_left_btn_icon'];
 
 ?>
 <!doctype html>

@@ -264,6 +264,78 @@ if( class_exists( 'CSF' ) ) {
             'default'  => __('https://www.youtube.com/embed/Jfrjeg26Cwk', 'postkasse'),
             'attributes' => array('style' => 'width: 100%;'),
           ),
+          array(
+            'type'    => 'subheading',
+            'content' => 'Hero section Images Settings',
+          ),
+          array(
+            'id'    => 'hero-right-image1',
+            'type'  => 'media',
+            'title' => 'Hero Small Image',
+            'subtitle'  => __('Upload your Image', 'postkasse' ),
+            'default'   => array('url' => get_template_directory_uri(). '/assets/images/digital/02.jpg'),
+          ),
+          array(
+            'id'    => 'hero-right-image2',
+            'type'  => 'media',
+            'title' => 'Hero Large Image',
+            'subtitle'  => __('Upload your Image', 'postkasse' ),
+            'default'   => array('url' => get_template_directory_uri(). '/assets/images/digital/01.jpg'),
+          ),
+        )
+      ));
+      /************************************************************************/
+      // Theme Frontend settings
+      /***************************************************************************/
+
+      CSF::createSection( $prefix, array(
+        'parent'      => 'frontend_settings',
+        'title'       => 'How its Work Settings',
+        'description' => 'This settings will maange your hompage all the contents. Explore the settngs and configure it as you want.',
+        'fields'      => array(
+    
+          array(
+            'id'       => 'hiws_headings',
+            'type'     => 'text',
+            'title'    => 'Enter Heading Text',
+            'default'  => __('Agency Features', 'postkasse'),
+            'attributes' => array('style'    => 'width: 100%;'),
+          ),
+          array(
+            'id'       => 'hiws_description',
+            'type'     => 'textarea',
+            'title'    => 'Enter Description',
+            'default'  => __('Start working with Fronter that can provide everything you need to generate awareness, drive traffic, connect.', 'postkasse'),
+            'attributes' => array('style'    => 'width: 100%;'),
+          ),
+          array(
+            'type'    => 'subheading',
+            'content' => 'Box Settings with icons',
+          ),
+          array(
+            'id'     => 'hiws_items',
+            'type'   => 'repeater',
+            'title'  => 'Add New Box',
+            'fields' => array(
+              array(
+                'id'    => 'hiws_box_icons',
+                'type'  => 'text',
+                'title' => 'Heading Icon',
+              ),
+              array(
+                'id'    => 'hiws_box',
+                'type'  => 'text',
+                'title' => 'Heading Text',
+              ),
+              array(
+                'id'    => 'hiws_box_desc',
+                'type'  => 'textarea',
+                'title' => 'Description Text',
+              ),
+              
+            )
+
+          ),
         )
       ));
   }

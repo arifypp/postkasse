@@ -6,6 +6,14 @@ $postkasee__hero_subheading = $postkasse_options['hero_subheading'];
 $postkasee__main_favicon    = $postkasse_options['main-favicon'];
 $postkasee__hero_mainheading    = $postkasse_options['hero_mainheading'];
 $postkasee__hero_text_animation_repeter    = $postkasse_options['hero_text_animation_repeter'];
+$postkasee__hero_description    = $postkasse_options['hero_description'];
+$postkasee__hero_video_text    = $postkasse_options['hero_video_text'];
+$postkasee__hero_video_link    = $postkasse_options['hero_video_link'];
+$postkasee__hero_right_image1    = $postkasse_options['hero-right-image1'];
+$postkasee__hero_right_image2    = $postkasse_options['hero-right-image2'];
+$postkasee__hiws_headings    = $postkasse_options['hiws_headings'];
+$postkasee__hiws_description    = $postkasse_options['hiws_description'];
+$postkasee__hiws_items    = $postkasse_options['hiws_items'];
 
 ?>
     <!-- Start Hero -->
@@ -25,6 +33,7 @@ $postkasee__hero_text_animation_repeter    = $postkasse_options['hero_text_anima
                         </h6>
                         <?php endif; ?>
 
+                        <?php if( !empty($postkasee__hero_mainheading) ) : ?>
                         <h4 class="heading mb-4">
                             <?php echo esc_html__($postkasee__hero_mainheading, 'postkasse'); ?>
                             <span class="text-primary typewrite" data-period="2000" data-type='[ <?php
@@ -38,21 +47,28 @@ $postkasee__hero_text_animation_repeter    = $postkasse_options['hero_text_anima
                             ?> ]'> <span class="wrap"></span> 
                             </span>
                         </h4>
-                        <p class="text-muted para-desc mb-0">We collaborate with people, teams, and businesses to develop design systems, strategies, and processes to do a better creative work everyday.</p>
-                    
-                        <div class="mt-4">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#video_modal" class="btn btn-icon btn-pills btn-primary video-btn"><i data-feather="video" class="fea icon-sm"></i></a><span class="fw-normal align-middle ms-2">Watch Now</span>
+                        <?php endif; ?>
 
+                        <?php if( !empty($postkasee__hero_description) ) : ?>
+                        <p class="text-muted para-desc mb-0">
+                            <?php echo esc_html__($postkasee__hero_description, 'postkasse'); ?>
+                        </p>
+                        <?php endif; ?>
+
+                        <div class="mt-4">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#video_modal" class="btn btn-icon btn-pills btn-primary video-btn"><i data-feather="video" class="fea icon-sm"></i></a><span class="fw-normal align-middle ms-2"><?php echo esc_html__($postkasee__hero_video_text, 'postkasse'); ?></span>
                         </div>
                     </div>
                 </div><!--end col-->
 
                 <div class="col-lg-6 offset-lg-1 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                    <div class="row g-3 align-items-center">
+                    <div class="row g-3 align-items-center animtaed">
                         <div class="col-lg-5 col-6">
                             <div class="row g-3">
                                 <div class="col-lg-12 col-md-12">
-                                    <img src="<?php echo esc_url( get_template_directory_uri(). '/assets/images/digital/02.jpg' ); ?>" class="img-fluid rounded-md" alt="work-image">
+                                    <?php if( !empty($postkasee__hero_right_image1) ) : ?>
+                                    <img src="<?php echo esc_url( $postkasee__hero_right_image1['url'], 'postkasse' ); ?>" class="img-fluid rounded-md" alt="work-image">
+                                    <?php endif; ?>
                                 </div><!--end col-->
 
                                 <div class="col-lg-12 col-md-12 text-end">
@@ -62,7 +78,9 @@ $postkasee__hero_text_animation_repeter    = $postkasse_options['hero_text_anima
                         </div><!--end col-->
 
                         <div class="col-lg-7 col-6">
-                            <img src="<?php echo esc_url( get_template_directory_uri(). '/assets/images/digital/01.jpg' ); ?>" class="img-fluid rounded-md" alt="work-image">
+                        <?php if( !empty($postkasee__hero_right_image2) ) : ?>
+                            <img src="<?php echo esc_url( $postkasee__hero_right_image2['url'], 'postkasse' ); ?>" class="img-fluid rounded-md" alt="work-image">
+                         <?php endif; ?>
                         </div><!--end col-->
                     </div><!--end row-->
                 </div><!--end col-->
@@ -77,66 +95,44 @@ $postkasee__hero_text_animation_repeter    = $postkasse_options['hero_text_anima
             <div class="row justify-content-center">
                 <div class="col">
                     <div class="section-title text-center mb-4 pb-2">
-                        <h4 class="title mb-4">Agency Features</h4>
-                        <p class="text-muted para-desc mb-0 mx-auto">Start working with Fronter that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                        <?php if( !empty($postkasee__hiws_headings) ) : ?>
+                        <h4 class="title mb-4"><?php echo esc_html__($postkasee__hiws_headings, 'postkasse')?></h4>
+                        <?php endif; ?>
+
+                        <?php if( !empty($postkasee__hiws_description) ) : ?>
+                        <p class="text-muted para-desc mb-0 mx-auto"><?php echo esc_html__($postkasee__hiws_description, 'postkasse')?></p>
+                        <?php endif; ?>
+
                     </div>
                 </div><!--end col-->
             </div><!--end row-->
 
             <div class="row">
-                <div class="col-lg-3 col-md-6 mt-4 pt-2">
-                    <div class="card border-0 text-center features feature-success feature-clean">
-                        <div class="icons bg-lg text-center mx-auto">
-                            <i class="uil uil-airplay d-block rounded-lg h2 mb-0"></i>
-                        </div>
-                        <div class="content mt-4 pt-2">
-                            <h5 class="mb-3">Digital Marketing</h5>
-                            <p class="text-muted mb-0">The phrasal sequence of the Lorem Ipsum text is now so that many DTP programmes can generate</p>
-                        </div>
-                    </div>
-                </div><!--end col-->
-
+            <?php foreach ($postkasee__hiws_items as $key => $hiws_item) { ?>
                 <div class="col-lg-3 col-md-6 mt-4 pt-2">
                     <div class="card border-0 text-center features feature-danger feature-clean">
                         <div class="icons bg-lg text-center mx-auto">
-                            <i class="uil uil-presentation-play d-block rounded-lg h2 mb-0"></i>
+                            <?php echo $hiws_item['hiws_box_icons']; ?>
                         </div>
                         <div class="content mt-4 pt-2">
-                            <h5 class="mb-3">Video Production</h5>
-                            <p class="text-muted mb-0">The phrasal sequence of the Lorem Ipsum text is now so that many DTP programmes can generate</p>
-                        </div>
-                    </div>
-                </div><!--end col-->
+                            <?php if( !empty($postkasee__hiws_items) ) : ?>
+                            <h5 class="mb-3"><?php echo esc_html__($hiws_item['hiws_box'], 'postkasse'); ?></h5>
+                            <?php endif; ?>
 
-                <div class="col-lg-3 col-md-6 mt-4 pt-2">
-                    <div class="card border-0 text-center features feature-info feature-clean">
-                        <div class="icons bg-lg text-center mx-auto">
-                            <i class="uil uil-mobile-android d-block rounded-lg h2 mb-0"></i>
-                        </div>
-                        <div class="content mt-4 pt-2">
-                            <h5 class="mb-3">Web & Mobile</h5>
-                            <p class="text-muted mb-0">The phrasal sequence of the Lorem Ipsum text is now so that many DTP programmes can generate</p>
+                            <?php if( !empty($postkasee__hiws_items) ) : ?>
+                            <p class="text-muted mb-0"><?php echo esc_html__($hiws_item['hiws_box_desc'], 'postkasse'); ?></p>
+                            <?php endif; ?>
+
                         </div>
                     </div>
                 </div><!--end col-->
-                
-                <div class="col-lg-3 col-md-6 mt-4 pt-2">
-                    <div class="card border-0 text-center features feature-warning feature-clean">
-                        <div class="icons bg-lg text-center mx-auto">
-                            <i class="uil uil-crop-alt d-block rounded-lg h2 mb-0"></i>
-                        </div>
-                        <div class="content mt-4 pt-2">
-                            <h5 class="mb-3">UX Design</h5>
-                            <p class="text-muted mb-0">The phrasal sequence of the Lorem Ipsum text is now so that many DTP programmes can generate</p>
-                        </div>
-                    </div>
-                </div><!--end col-->
+            <?php } ?>
             </div><!--end row-->
         </div><!--end container-->
         
         <div class="container mt-100 mt-60">
             <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-6 animtaed">
                     <div class="row g-3 align-items-center">
                         <div class="col-lg-7 col-6">
                             <img src="<?php echo esc_url( get_template_directory_uri(). '/assets/images/digital/03.jpg'); ?>" class="img-fluid rounded-md" alt="work-image">
@@ -223,7 +219,7 @@ $postkasee__hero_text_animation_repeter    = $postkasse_options['hero_text_anima
                 <div class="modal-body p-0">
                     <!-- 16:9 aspect ratio -->
                     <div class="w-100 m-0 p-0">
-                        <iframe class="w-100 m-0 p-0" src="https://www.youtube.com/embed/Jfrjeg26Cwk" id="video"  allowscriptaccess="always" height="500" allow="autoplay"></iframe>
+                        <iframe class="w-100 m-0 p-0" src="<?php echo esc_url( $postkasee__hero_video_link, 'postkasse'); ?>" id="video"  allowscriptaccess="always" height="500" allow="autoplay"></iframe>
                     </div>
                 </div>
             </div>
