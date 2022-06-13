@@ -97,50 +97,11 @@ $postkasee__social_repeter = $postkasse_options['social_repeter'];
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content rounded shadow border-0">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Contact Us </h5>
+                    <h5 class="modal-title" id="exampleModalCenterTitle"><?php echo esc_html__('Contact Us', 'postkasse')?> </h5>
                     <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal" aria-label="Close"><i class="uil uil-times fs-4"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" name="myForm" onsubmit="return validateForm()">
-                        <p id="error-msg" class="mb-0"></p>
-                        <div id="simple-msg"></div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label class="form-label fw-normal">Your Name <span class="text-danger">*</span></label>
-                                    <input name="name" id="name" type="text" class="form-control" placeholder="Name :">
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label class="form-label fw-normal">Your Email <span class="text-danger">*</span></label>
-                                    <input name="email" id="email" type="email" class="form-control" placeholder="Email :">
-                                </div> 
-                            </div><!--end col-->
-
-                            <div class="col-12">
-                                <div class="mb-3">
-                                    <label class="form-label fw-normal">Subject</label>
-                                    <input name="subject" id="subject" class="form-control" placeholder="subject :">
-                                </div>
-                            </div><!--end col-->
-
-                            <div class="col-12">
-                                <div class="mb-3">
-                                    <label class="form-label fw-normal">Comments <span class="text-danger">*</span></label>
-                                    <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="Message :"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="d-grid">
-                                    <button type="submit" id="submit" name="send" class="btn btn-primary">Send Message</button>
-                                </div>
-                            </div><!--end col-->
-                        </div><!--end row-->
-                    </form>
+                    <?php echo do_shortcode("[fc id='1'][/fc]"); ?>
                 </div>
             </div>
         </div>

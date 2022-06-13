@@ -221,3 +221,10 @@ add_filter('nav_menu_css_class', 'atg_menu_classes', 1, 3);
  *
  */
 require_once get_theme_file_path() .'/inc/codestar-framework.php';
+/**
+ *
+ * TGM Plugin Activation Framework
+ * A Simple and Lightweight WordPress Option Framework for Themes and Plugins
+ *
+ */
+require_once get_theme_file_path() .'/inc/plugin.php';
